@@ -1,12 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-
-body{
+body {
     background-color: rgb(231, 32, 98);
     height: 100vh;
     width: 100%;
@@ -14,10 +12,9 @@ body{
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-
 }
 
-.wrapper{
+.wrapper {
     height: 200px;
     width: 400px;
     background-color: rgb(234, 234, 244);
@@ -27,10 +24,10 @@ body{
     align-items: center;
     z-index: 0;
     transition: 0.5s;
-
+    cursor: pointer;
 }
 
-.letter{
+.letter {
     position: absolute;
     top: 0;
     width: 80%;
@@ -38,17 +35,21 @@ body{
     background-color: white;
     border-radius: 15px;
     z-index: 2;
-    transition: transform 0.25s linear;
-
+    transition: transform 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .letter p {
     text-align: center;
     font-size: 30px;
-    margin-top: 30px;
     color: black;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-.envelope{
+.envelope {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -59,9 +60,9 @@ body{
     border-bottom: 100px solid darkgrey;
     border-left: 150px solid grey;
     z-index: 3;
-
 }
-.lid{
+
+.lid {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -71,11 +72,10 @@ body{
     border-bottom: 100px solid transparent;
     border-left: 150px solid transparent;
     transform-origin: top;
-    transition: transform 0.25s linear;
-
+    transition: transform 0.5s ease-in-out;
 }
 
-.lid.one{
+.lid.one {
     border-top: 100px solid lightgrey;
     transform: rotateX(0deg);
     z-index: 3;
@@ -89,25 +89,22 @@ body{
     transition-delay: 0.5s;
 }
 
-.wrapper:hover .lid.one{
+.wrapper:hover .lid.one {
     transform: rotateX(90deg);
     transition-delay: 0s;
-
 }
 
-
-.wrapper:hover .lid.two{
+.wrapper:hover .lid.two {
     transform: rotateX(180deg);
     transition-delay: 0.25s;
-
 }
 
-.wrapper :hover .letter {
-    transform: translateY(-100px);
+.wrapper:hover .letter {
+    transform: translateY(-120px);
     transition-delay: 0.5s;
 }
 
-p{
-    font-size: larger;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+.wrapper:hover .letter p {
+    opacity: 1;
+    transition-delay: 0.7s;
 }
